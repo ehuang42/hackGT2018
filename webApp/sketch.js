@@ -1,12 +1,6 @@
 var request, output;
-
 var capture;
 var w = 640, h = 480;
-
-var loadFile = function(event) {
-  var image = document.getElementById('output');
-  image.src = URL.createObjectURL(event.target.files[0]);
-};
 
 function setup() {
   capture = createCapture(VIDEO);
@@ -67,27 +61,38 @@ function upload() {
            
           if (redInt < 40 && greenInt < 40 && blueInt < 40) {
               console.log("black");
+              document.body.style.getElementById("h2").style.backgroundColor = '#fbfcfc';
+              document.body.style.backgroundColor = '#424747';
               resultStr = "Metal";
           } else if (redInt > 180 && greenInt > 180 && blueInt > 180) {
               console.log("white");
+              document.body.style.backgroundColor = '#eaeaea';
               resultStr = "Opera";
           } else if (redInt > 100 && greenInt > 100 && blueInt > 100) {
               console.log("grey");
-              resultStr = "Indie";
+              document.body.style.backgroundColor = '#c0bfc0';
+              document.body.style.getElementById("web_cam").style.backgroundColor = '#f8fafa';
+              resultStr = "Hip-Hop";
           } else if (redInt > 100 && greenInt > 100 && blueInt < 65) {
               console.log("yellow");
-              resultStr = "Acoustic";
+              document.body.style.backgroundColor = '#fcaf6d';
+              document.body.style.getElementById("web_cam").style.backgroundColor = '#fe8500';
+              resultStr = "Pop";
           } else if (redInt > 50 && greenInt > 15 && blueInt > 15) {
               console.log("brown");
+              document.body.style.backgroundColor = '#3a201b';
               resultStr = "Folk";
           } else if (redInt > greenInt && redInt > blueInt) {
               console.log("red");
+              document.body.style.backgroundColor = "red";
               resultStr = "Love";
           } else if (greenInt > redInt && greenInt > blueInt) {
               console.log("green");
+              document.body.style.backgroundColor = "green";
               resultStr = "Nature";
           } else {
               console.log("blue");
+              document.body.style.backgroundColor = "blue";
               resultStr = "Sad";
           }
       },
