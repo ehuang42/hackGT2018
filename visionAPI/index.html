@@ -10,8 +10,11 @@
       <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
       <p><label id="uploadLabel" for="file" style="cursor: pointer;">Upload Image</label></p>
     </div>
-    
-     <p><img id="output" width="200" /></p>
+
+    <div class="pic">
+      <p>Your image:<br>
+      <img id="output" width="200"/></p>
+    </div>
 
     <script>
       var loadFile = function(event) {
@@ -25,6 +28,9 @@
       document.write("But why");
       }
     </script>
+
+    <h1>Consol log: <code>View > Developer > JavaScript Console</code>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
 
   </body>
 </html>

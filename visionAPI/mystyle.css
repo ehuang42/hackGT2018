@@ -12,6 +12,8 @@ body {
     text-align: center;
 }
 
-p {
+.pic {
     margin: 1em auto;
+    width: 300px;
+    text-align: center;
 }
