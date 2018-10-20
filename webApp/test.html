@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  
+  
+  <head>
+    <meta charset="UTF-8">
+
+    <title>vision-test</title>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="libraries/p5.sound.js" type="text/javascript"></script>
+    <script src="libraries/jquery.min.js"></script>
+    <!-- <script src="libraries/canvas-to-blob.js"></script> -->
+    <script src="sketch.js" type="text/javascript"></script>
+
+    <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+      <div>
+        <h1>Welcome to our demo!</h1>
+      </div>
+
+      <div>
+        
+        <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+        <p><img id="output" width="200" /></p>
+                
+      </div>
+  </body>
+    
+</html>

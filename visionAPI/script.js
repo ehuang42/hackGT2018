@@ -1,8 +1,13 @@
+var image = document.getElementById('output');
+var url = URL.createObjectURL(event.target.files[0]);
+
+/*
 // Imports the Google Cloud client library
 const vision = require('@google-cloud/vision');
 
 // Creates a client
 const client = new vision.ImageAnnotatorClient();
+POST https://vision.googleapis.com/v1/images:annotate?key=YOUR_API_KEY
 
 // Performs label detection on the image file
   client
@@ -13,11 +18,11 @@ const client = new vision.ImageAnnotatorClient();
     redInt = colors[0].color.red;
     greenInt = colors[0].color.green;
     blueInt = colors[0].color.blue;
-    /*
+    
     console.log(redInt);
     console.log(greenInt);
     console.log(blueInt);
-     */
+     
     if (redInt < 20 && greenInt < 20 && blueInt < 20) {
         console.log("black");
     } else if (redInt > 180 && greenInt > 180 && blueInt > 180) {
@@ -39,5 +44,5 @@ const client = new vision.ImageAnnotatorClient();
   })
   .catch(err => {
     console.error('ERROR:', err);
-  });
+  });*/
 
