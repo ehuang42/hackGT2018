@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 @import url('https://fonts.googleapis.com/css?family=Chakra+Petch');
 
-
+.column1 {
+    flex: 50%;
+    float: left;
+}
 
 h1 {
 	font-family: 'Chakra Petch', sans-serif;
@@ -17,6 +20,53 @@ h1 {
 	text-transform: none;
 	text-align: center;
 }
+
+
+#spotify {
+	text-align: center;
+}
+.row {
+    display: flex;
+
+}
+
+.column {
+    flex: 50%;
+    align-content: center;
+    float: left;
+}
+
+
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+h2 {
+	text-align: center;
+	background-color: white;
+	font-family: 'Chakra Petch', sans-serif;
+	box-shadow: 4px 4px 15px 1px #cfa9a9;
+}
+
 
 body {
     background-color: #f8d0c3;

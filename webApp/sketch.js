@@ -1,12 +1,6 @@
 var request, output;
-
 var capture;
 var w = 640, h = 480;
-
-var loadFile = function(event) {
-  var image = document.getElementById('output');
-  image.src = URL.createObjectURL(event.target.files[0]);
-};
 
 function setup() {
   capture = createCapture(VIDEO);
@@ -57,37 +51,61 @@ function upload() {
           output = data;
           var properties = data.responses[0].imagePropertiesAnnotation;
           var colors = properties.dominantColors.colors;
-          redInt = colors[0].color.red;
-          greenInt = colors[0].color.green;
-          blueInt = colors[0].color.blue;
+          r0 = colors[0].color.red;
+          g0 = colors[0].color.green;
+          b0 = colors[0].color.blue;
           var resultStr = "";
-          console.log(redInt);
-          console.log(greenInt);
-          console.log(blueInt);
-           
-          if (redInt < 40 && greenInt < 40 && blueInt < 40) {
+          console.log(r0);
+          console.log(g0);
+          console.log(b0);
+
+          r1 = colors[1].color.red;
+          g1 = colors[1].color.green;
+          b1 = colors[1].color.blue;
+
+          r2 = colors[2].color.red;
+          g2 = colors[2].color.green;
+          b2 = colors[2].color.blue;
+
+          document.getElementById("dominant_id").style.backgroundColor = 'rgb(' + [r0,g0,b0].join(',') + ')';
+          document.getElementById("secondary_id").style.backgroundColor = 'rgb(' + [r1,g1,b1].join(',') + ')';
+          document.getElementById("tertiary_id").style.backgroundColor = 'rgb(' + [r2,g2,b2].join(',') + ')';
+
+          if (r0 < 40 && g0 < 40 && b0 < 40) {
               console.log("black");
+              document.body.style.backgroundColor = '#424747';
+              document.style.getElementById("h2").style.backgroundColor = '#fbfcfc';
+              document.style.getElementById("h2").style.color = "white";
               resultStr = "Metal";
-          } else if (redInt > 180 && greenInt > 180 && blueInt > 180) {
+          } else if (r0 > 180 && g0 > 180 && b0 > 180) {
               console.log("white");
+              document.body.style.backgroundColor = '#eaeaea';
               resultStr = "Opera";
-          } else if (redInt > 100 && greenInt > 100 && blueInt > 100) {
+          } else if (r0 > 100 && g0 > 100 && b0 > 100) {
               console.log("grey");
-              resultStr = "Indie";
-          } else if (redInt > 100 && greenInt > 100 && blueInt < 65) {
+              document.body.style.backgroundColor = '#c0bfc0';
+              document.getElementById("h2").style.backgroundColor = '#f8fafa';
+              resultStr = "Hip-Hop";
+          } else if (r0 > 100 && g0 > 100 && b0 < 65) {
               console.log("yellow");
-              resultStr = "Acoustic";
-          } else if (redInt > 50 && greenInt > 15 && blueInt > 15) {
+              document.body.style.backgroundColor = '#fcaf6d';
+              document.getElementById('h2').style.backgroundColor = '#fe8500';
+              resultStr = "Pop";
+          } else if (r0 > 50 && g0 > 15 && b0 > 15) {
               console.log("brown");
+              document.body.style.backgroundColor = '#3a201b';
               resultStr = "Folk";
-          } else if (redInt > greenInt && redInt > blueInt) {
+          } else if (r0 > g0 && r0 > b0) {
               console.log("red");
+              document.body.style.backgroundColor = "red";
               resultStr = "Love";
-          } else if (greenInt > redInt && greenInt > blueInt) {
+          } else if (g0 > r0 && g0 > b0) {
               console.log("green");
+              document.body.style.backgroundColor = "green";
               resultStr = "Nature";
           } else {
               console.log("blue");
+              document.body.style.backgroundColor = "blue";
               resultStr = "Sad";
           }
       },
@@ -97,6 +115,17 @@ function upload() {
     })
   })
 }
+
+var http = new XMLHttpRequest();
+
+http.onreadystatechange = function() {
+  if(http.readyState == 4 && http.status == 200) {
+    var palette = JSON.parse(http.responseText).result;
+  }
+}
+
+http.open("POST", url, true);
+http.send(JSON.stringify(data));
 
 function draw() {
   // whatever you draw here will be uploaded to google when you call upload()
