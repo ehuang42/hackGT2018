@@ -150,7 +150,7 @@ function upload() {
 
 function draw() {
   // whatever you draw here will be uploaded to google when you call upload()
-  image(capture, 0, 0, w, h);
+  image(capture, -5, -5, w, h);
 }
 
 function mousePressed() {
