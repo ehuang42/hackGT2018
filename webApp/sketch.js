@@ -55,7 +55,6 @@ function upload() {
           g0 = colors[0].color.green;
           b0 = colors[0].color.blue;
           var resultStr = "";
-
           console.log(r0);
           console.log(g0);
           console.log(b0);
@@ -75,8 +74,8 @@ function upload() {
           if (r0 < 40 && g0 < 40 && b0 < 40) {
               console.log("black");
               document.body.style.backgroundColor = '#424747';
-              document.style.getElementById("h2").style.backgroundColor = '#fbfcfc';
-              document.style.getElementById("h2").style.color = "white";
+              document.getElementById("h2").style.backgroundColor = '#fbfcfc';
+              document.getElementById("h2").style.color = "white";
               resultStr = "Metal";
           } else if (r0 > 180 && g0 > 180 && b0 > 180) {
               console.log("white");
@@ -86,7 +85,7 @@ function upload() {
               console.log("grey");
               document.body.style.backgroundColor = '#c0bfc0';
               document.getElementById("h2").style.backgroundColor = '#f8fafa';
-              resultStr = "Hip-Hop";
+              resultStr = "HipHop";
           } else if (r0 > 100 && g0 > 100 && b0 < 65) {
               console.log("yellow");
               document.body.style.backgroundColor = '#fcaf6d';
@@ -103,34 +102,34 @@ function upload() {
           } else if (g0 > r0 && g0 > b0) {
               console.log("green");
               document.body.style.backgroundColor = "green";
-              resultStr = "Nature";
+              resultStr = "HipHop";
           } else {
               console.log("blue");
               document.body.style.backgroundColor = "blue";
               resultStr = "Sad";
           }
-
           var spotPlaylist = "";
 
-          var urlMetal = "https://open.spotify.com/playlist/0TjXAODinvMXFRmAVQeglO"; //black
-          var urlOpera = "https://open.spotify.com/playlist/5wnkBErltLPUs7VHqj0Hdv"; //white
-          var urlIndie = "https://open.spotify.com/playlist/4nNtij7TufT5vtKea1474s"; //grey
-          var urlAcountic = "https://open.spotify.com/playlist/07zHzal6IkvS9RjQcD3jhh"; //yellow
-          var urlFolk = "https://open.spotify.com/playlist/3sXbU1Dt3o4vW82Oi3dCnh"; //brown
-          var urlLove = "https://open.spotify.com/playlist/65Bj0aD7Wvr3StW4Ioeeas"; //red
-          var urlNature = "https://open.spotify.com/playlist/28462St7wH9XZfSI7DtFln"; //green
-          var urlSad = "https://open.spotify.com/playlist/2Ae1SrKcb3zr6y6bnCZGlM"; //blues
+
+          var urlMetal = "https://open.spotify.com/embed/user/12134015529/playlist/0TjXAODinvMXFRmAVQeglO"; //black
+          var urlOpera = "https://open.spotify.com/embed/user/12134015529/playlist/5wnkBErltLPUs7VHqj0Hdv"; //white
+          var urlHipHop = "https://open.spotify.com/embed/user/12134015529/playlist/4nNtij7TufT5vtKea1474s"; //grey
+          var urlPop = "https://open.spotify.com/embed/user/12134015529/playlist/07zHzal6IkvS9RjQcD3jhh"; //yellow
+          var urlFolk = "https://open.spotify.com/embed/user/12134015529/playlist/3sXbU1Dt3o4vW82Oi3dCnh"; //brown
+          var urlLove = "https://open.spotify.com/embed/user/12134015529/playlist/65Bj0aD7Wvr3StW4Ioeeas"; //red
+          var urlNature = "https://open.spotify.com/embed/user/12134015529/playlist/28462St7wH9XZfSI7DtFln"; //green
+          var urlSad = "https://open.spotify.com/embed/user/12134015529/playlist/2Ae1SrKcb3zr6y6bnCZGlM"; //blues
 
           if (resultStr == "Metal") {
               spotPlaylist = urlMetal;
           } else if (resultStr == "Opera") {
               spotPlaylist = urlOpera;
-          } else if (resultStr == "Indie") {
-              spotPlaylist = urlIndie;
-          } else if (resultStr == "Acoustic") {
-              spotPlaylist = urlAcountic;
+          } else if (resultStr == "HipHop") {
+              spotPlaylist = urlHipHop;
           } else if (resultStr == "Folk") {
-              spotPlaylist = urlSad;
+              spotPlaylist = urlFolk;
+          } else if (resultStr == "Pop") {
+              spotPlaylist = urlPop;
           } else if (resultStr == "Love") {
               spotPlaylist = urlLove;
           } else if (resultStr == "Nature") {
@@ -139,10 +138,8 @@ function upload() {
               spotPlaylist = urlSad;
           }
 
-          viewPlaylist = document.getElementById();
+          viewPlaylist = document.getElementById("player");
           viewPlaylist.src = spotPlaylist;
-
-        }
       },
       error: function (data, textStatus, errorThrown) {
         console.log('error: ' + data);
@@ -150,17 +147,6 @@ function upload() {
     })
   })
 }
-
-var http = new XMLHttpRequest();
-
-http.onreadystatechange = function() {
-  if(http.readyState == 4 && http.status == 200) {
-    var palette = JSON.parse(http.responseText).result;
-  }
-}
-
-http.open("POST", url, true);
-http.send(JSON.stringify(data));
 
 function draw() {
   // whatever you draw here will be uploaded to google when you call upload()
