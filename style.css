@@ -1,22 +1,67 @@
-body {
-    background: rgb(243, 244, 245);
-    height: 100%;
-    color: rgb(100, 108, 127);
-    line-height: 1.4rem;
-    font-family: Roboto, "Open Sans", sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    text-rendering: optimizeLegibility;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch');
+
+
+h1 {
+	font-family: 'Chakra Petch', sans-serif;
+	align-content: center;
+	font-size: 32px;
+	letter-spacing: 2px;
+	word-spacing: 2px;
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-align: center;
 }
 
-h1 { text-align: center; }
 
-.dropzone {
-    background: white;
-    border-radius: 5px;
-    border: 2px dashed rgb(0, 135, 247);
-    border-image: none;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+#spotify {
+	text-align: center;
+}
+.row {
+    display: flex;
+
+}
+
+.column {
+    flex: 50%;
+    align-content: center;
+    float: left;
+}
+
+
+.dominant_class {
+    background-color: #f8d0c3;
+    float: right;
+    width: 500px;
+    text-align: center;
+}
+
+.secondary_class {
+    background-color: #f8d0c3;
+    float: right;
+    width: 500px;
+    text-align: center;
+}
+
+.tertiary_class {
+    background-color: #f8d0c3;
+    float: right;
+    width: 500px;
+    text-align: center;
+}
+
+h2 {
+	text-align: center;
+	background-color: white;
+	font-family: 'Chakra Petch', sans-serif;
+	box-shadow: 4px 4px 15px 1px #cfa9a9;
+}
+
+
+body {
+    background-color: #f8d0c3;
 }
