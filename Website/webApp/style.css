@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch');
+
+/*welcome title*/
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    align-content: center;
+    font-size: 32px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+}
+
+
+/*try out web cam!*/
+h2 {
+    text-align: center;
+    background-color: white;
+    font-family: 'Chakra Petch', sans-serif;
+    box-shadow: 4px 4px 15px 1px #878787;
+    font-style: normal;
+}
+
+p {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+#spotify {
+    box-shadow: 4px 4px 15px 1px #878787;
+}
+
+.column {
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.column_right {
+    float: right;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.dominant_class {
+    border-radius: 25px;
+    background-color: #f8d0c3;
+    float: right;
+    width: 445px;
+    height: 150px;
+    text-align: center;
+    color:#eaeaea;
+    background-color: #94bab7;
+}
+
+.secondary_class {
+    border-radius: 25px;
+    background-color: #f8d0c3;
+    /*float: right;*/
+    width: 445px;
+    height: 120px;
+    margin-top: 150px;
+    text-align: center;
+    order: 2;
+    color:#eaeaea;
+    background-color: #698e8b;
+}
+
+.tertiary_class {
+    border-radius: 25px;
+    margin-top: -17px;
+    background-color: #f8d0c3;
+    /*float: right;*/
+    width: 445px;
+    height: 80px;
+    text-align: center;
+    order: 3;
+    color:#eaeaea;
+    background-color: #436663;
+}
+
+body {
+    background-color: #f8d0c3;
+}
