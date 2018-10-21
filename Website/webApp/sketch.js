@@ -94,6 +94,12 @@ function upload() {
               document.getElementById("h1").style.color = "black";
               document.getElementById('h1').style.fontFamily = "Chakra Petch, sans-serif";
               resultStr = "Opera";
+          } else if (b0 > 150 || (b0 > g0 && b0 > r0)) {
+              console.log("blue");
+              document.body.style.backgroundColor = "#c2dbf4";
+              document.getElementById("h1").style.color = "black";
+              document.getElementById('h1').style.fontFamily = "Chakra Petch, sans-serif";
+              resultStr = "Sad";
           } else if (r0 > 60 && g0 > 60 && b0 > 60) {
               console.log("grey");
               document.body.style.backgroundColor = '#c0bfc0';
@@ -103,12 +109,12 @@ function upload() {
               resultStr = "HipHop";
           } else if (r0 > 100 && g0 > 100 && b0 < 65) {
               console.log("yellow");
-              document.body.style.backgroundColor = '#fcaf6d';
-              document.getElementById('h2').style.backgroundColor = '#fe8500';
+              document.body.style.backgroundColor = '#ffd191';
+              document.getElementById('h2').style.backgroundColor = '#ffd191';
               document.getElementById("h1").style.color = "black";
               document.getElementById('h1').style.fontFamily = "Chakra Petch, sans-serif";
               resultStr = "Pop";
-          } else if (r0 > 30 && g0 > 15 && b0 > 15 && r0 > b0) {
+          } else if (r0 < 100 && g0 > 30 && b0 > 15 && r0 > b0 && r0 > g0) {
               console.log("brown");
               document.body.style.backgroundColor = '#3a201b';
               document.getElementById("h1").style.color = "white";
@@ -126,12 +132,6 @@ function upload() {
               document.getElementById("h1").style.color = "black";
               document.getElementById('h1').style.fontFamily = "Chakra Petch, sans-serif";
               resultStr = "HipHop";
-          } else {
-              console.log("blue");
-              document.body.style.backgroundColor = "#3d76d3";
-              document.getElementById("h1").style.color = "black";
-              document.getElementById('h1').style.fontFamily = "Chakra Petch, sans-serif";
-              resultStr = "Sad";
           }
           var spotPlaylist = "";
 
