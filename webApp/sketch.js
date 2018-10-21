@@ -11,8 +11,8 @@ function setup() {
 
 function blobToBase64(blob, cb) {
   var reader = new window.FileReader();
-  reader.readAsDataURL(blob); 
-  reader.onloadend = function() {           
+  reader.readAsDataURL(blob);
+  reader.onloadend = function() {
     cb(reader.result);
   }
 }
@@ -40,7 +40,7 @@ function upload() {
           }
         ]
       };
-      
+
       $.ajax({
         method: 'POST',
         url: 'https://vision.googleapis.com/v1/images:annotate?key=AIzaSyCDe_xjTXtzPmjVHHvLNlzy0CE17cZQG60',
@@ -55,6 +55,7 @@ function upload() {
           g0 = colors[0].color.green;
           b0 = colors[0].color.blue;
           var resultStr = "";
+
           console.log(r0);
           console.log(g0);
           console.log(b0);
@@ -108,6 +109,40 @@ function upload() {
               document.body.style.backgroundColor = "blue";
               resultStr = "Sad";
           }
+
+          var spotPlaylist = "";
+
+          var urlMetal = "https://open.spotify.com/playlist/0TjXAODinvMXFRmAVQeglO"; //black
+          var urlOpera = "https://open.spotify.com/playlist/5wnkBErltLPUs7VHqj0Hdv"; //white
+          var urlIndie = "https://open.spotify.com/playlist/4nNtij7TufT5vtKea1474s"; //grey
+          var urlAcountic = "https://open.spotify.com/playlist/07zHzal6IkvS9RjQcD3jhh"; //yellow
+          var urlFolk = "https://open.spotify.com/playlist/3sXbU1Dt3o4vW82Oi3dCnh"; //brown
+          var urlLove = "https://open.spotify.com/playlist/65Bj0aD7Wvr3StW4Ioeeas"; //red
+          var urlNature = "https://open.spotify.com/playlist/28462St7wH9XZfSI7DtFln"; //green
+          var urlSad = "https://open.spotify.com/playlist/2Ae1SrKcb3zr6y6bnCZGlM"; //blues
+
+          if (resultStr == "Metal") {
+              spotPlaylist = urlMetal;
+          } else if (resultStr == "Opera") {
+              spotPlaylist = urlOpera;
+          } else if (resultStr == "Indie") {
+              spotPlaylist = urlIndie;
+          } else if (resultStr == "Acoustic") {
+              spotPlaylist = urlAcountic;
+          } else if (resultStr == "Folk") {
+              spotPlaylist = urlSad;
+          } else if (resultStr == "Love") {
+              spotPlaylist = urlLove;
+          } else if (resultStr == "Nature") {
+              spotPlaylist = urlNature;
+          } else if (resultStr == "Sad") {
+              spotPlaylist = urlSad;
+          }
+
+          viewPlaylist = document.getElementById();
+          viewPlaylist.src = spotPlaylist;
+
+        }
       },
       error: function (data, textStatus, errorThrown) {
         console.log('error: ' + data);
