@@ -63,6 +63,7 @@ p {
     background-color: #f8d0c3;
     float: right;
     width: 445px;
+    height: 100px;
     text-align: center;
 }
 
@@ -70,13 +71,17 @@ p {
     background-color: #f8d0c3;
     /*float: right;*/
     width: 445px;
+    height: 100px;
+    padding-top: 100px;
     text-align: center;
+
 }
 
 .tertiary_class {
     background-color: #f8d0c3;
     /*float: right;*/
     width: 445px;
+    height: 100px;
     text-align: center;
 }
 
